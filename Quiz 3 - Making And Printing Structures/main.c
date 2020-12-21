@@ -23,7 +23,7 @@ int main()
         scanf("%d", &student[i].id);
 
         printf("Enter NAME : ");
-        scanf("%s", &student[i].name);
+        scanf("%s", student[i].name);
 
         printf("Enter MARKS : ");
         scanf("%d", &student[i].marks);

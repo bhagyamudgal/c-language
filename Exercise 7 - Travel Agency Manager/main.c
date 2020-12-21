@@ -28,7 +28,7 @@ int main()
     printf("\nOutput Details Of Drivers :\n");
     for (int i = 1; i <= 3; i++)
     {
-        printf("\nDetails of Driver %d :\n", i);
+        printf("\n\nDetails of Driver %d :\n", i);
         printf("Driver Name : ");
         puts(driverdata[i].name);
         printf("Driving License Number: ");
