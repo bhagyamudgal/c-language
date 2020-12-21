@@ -20,18 +20,17 @@ void computerChoice()
 {
     int choice = 0;
     srand(time(NULL)); //srand take seed as an input defined in stdlib.h
-    choice = rand() % 9;
-    if (choice == 0 || choice == 3 || choice == 4)
+    choice = rand() % 18;
+    if (choice == 0 || choice == 3 || choice == 4 || choice == 16 || choice == 12 || choice == 13)
     {
         compChoice = 2;
         strcpy(compChoiceName, "Paper");
     }
-    else if (choice == 1 || choice == 8 || choice == 6)
+    else if (choice == 1 || choice == 8 || choice == 6 || choice == 17 || choice == 5 || choice == 15)
     {
         compChoice = 3;
         strcpy(compChoiceName, "Scissors");
     }
-
     else
     {
         compChoice = 1;
@@ -108,12 +107,11 @@ void winnerSelector()
     {
         printf("Its a Draw\n");
     }
-    
 }
 
 int main()
 {
-    int x;
+    int x, noOfRounds;
 
     printf("Welcome To Rock, Paper, Scissors Game\n");
     printf("Developed By Bhagya Mudgal\n\n");
@@ -121,10 +119,10 @@ int main()
     while (1)
     {
         printf("\nMENU :\n");
-        printf("1. Start New Game\n");
+        printf("\n1. Start New Game\n");
         printf("2. Exit\n");
 
-        printf("Select From (1-2) : ");
+        printf("\nSelect From (1-2) : ");
         scanf("%d", &x);
 
         switch (x)
@@ -132,7 +130,10 @@ int main()
         case 1:
             printf("\nEnter Your Name : ");
             scanf("%s", userName);
-            for (int round = 1; round <= 3; round++)
+
+            printf("\nEnter Number Of Rounds You Want To Play For : ");
+            scanf("%d", &noOfRounds);
+            for (int round = 1; round <= noOfRounds; round++)
             {
                 printf("\nRound %d\n", round);
                 printf("Choose From Below Options : \n");
