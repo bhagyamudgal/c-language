@@ -42,53 +42,53 @@ void roundWinner()
 {
     if (userChoice == 1 && compChoice == 1)
     {
-        printf("Its a Draw\n");
+        printf("Its a Draw ----------------------------\n");
         userPoint = 0;
         compPoint = 0;
     }
     else if (userChoice == 2 && compChoice == 2)
     {
-        printf("Its a Draw\n");
+        printf("Its a Draw ----------------------------\n");
         userPoint = 0;
         compPoint = 0;
     }
     else if (userChoice == 3 && compChoice == 3)
     {
-        printf("Its a Draw\n");
+        printf("Its a Draw ----------------------------\n");
         userPoint = 0;
         compPoint = 0;
     }
     if (userChoice == 1 && compChoice == 2)
     {
-        printf("Computer Wins\n");
+        printf("Computer ----------------------------\n");
 
         compPoint++;
     }
     else if (userChoice == 1 && compChoice == 3)
     {
-        printf("%s Wins\n", userName);
+        printf("%s ----------------------------\n", userName);
         userPoint++;
     }
     else if (userChoice == 2 && compChoice == 1)
     {
-        printf("%s Wins\n", userName);
+        printf("%s ----------------------------\n", userName);
         userPoint++;
     }
     if (userChoice == 2 && compChoice == 3)
     {
-        printf("Computer Wins\n");
+        printf("Computer ----------------------------\n");
 
         compPoint++;
     }
     else if (userChoice == 3 && compChoice == 1)
     {
-        printf("Computer Wins\n");
+        printf("Computer ----------------------------\n");
 
         compPoint++;
     }
     else if (userChoice == 3 && compChoice == 2)
     {
-        printf("%s Wins\n", userName);
+        printf("%s ----------------------------\n", userName);
         userPoint++;
     }
 }
@@ -97,15 +97,15 @@ void winnerSelector()
 {
     if (userPoint > compPoint)
     {
-        printf("%s\n", userName);
+        printf("%s ----------------------------\n\n", userName);
     }
     else if (userPoint < compPoint)
     {
-        printf("Computer Wins\n");
+        printf("Computer ----------------------------\n\n");
     }
     else
     {
-        printf("Its a Draw\n");
+        printf("Its a Draw ----------------------------\n\n");
     }
 }
 
@@ -134,7 +134,7 @@ int main()
             printf("\nEnter Number Of Rounds You Want To Play For : ");
             scanf("%d", &noOfRounds);
             for (int round = 1; round <= noOfRounds; round++)
-            {
+            {   rerun:
                 printf("\nRound %d\n", round);
                 printf("Choose From Below Options : \n");
                 printf("1-----Rock \n");
@@ -142,13 +142,33 @@ int main()
                 printf("3-----Scissors \n");
                 printf("Choose (1 or 2 or 3) : ");
                 scanf("%d", &userChoice);
+                if (userChoice==1)
+                {
+                    printf("\nYou Choose : Rock\n");
+                }
+                else if (userChoice==2)
+                {
+                    printf("\nYou Choose : Paper\n");
+                }
+                else if (userChoice==3)
+                {
+                    printf("\nYou Choose : Scissors\n");
+                }
+                else
+                {
+                    printf("\nPlease Choose From Above Given Options\n");
+                    goto rerun;
+                }
+                
+                
+                
                 computerChoice();
                 printf("\nComputer Choose : %s \n", compChoiceName);
 
-                printf("\n%d Round Winner : ", round);
+                printf("\n---------------------------- Round %d Winner : ", round);
                 roundWinner();
             }
-            printf("\nWinner Of The Game : ");
+            printf("\n\n---------------------------- Winner Of The Game : ");
             winnerSelector();
 
             userPoint = 0;
