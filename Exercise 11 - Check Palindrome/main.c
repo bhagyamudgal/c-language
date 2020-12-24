@@ -28,7 +28,7 @@ int main()
     printf("Program To Check Palindrome\n");
     printf("By Bhagya Mudgal\n");
 
-    printf("Enter Number : \n");
+    printf("Enter Number : ");
     scanf("%s", number);
 
     if (isPalindrome(number)==1)
