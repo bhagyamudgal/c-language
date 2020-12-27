@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Invalid Argument - use 'help'");
+            printf("Invalid Argument - You can use 'help'");
         }
     }
     else
